@@ -44,8 +44,8 @@ async function main() {
     try {
 
         // Iniciar conexión con RabbitMQ y el Servidor
-        const { channel, replyQueue_costos, replyQueue_conversacion, replyQueue_chatBase } = await connectRabbitMQ();
         await startServer();
+        const { channel, replyQueue_costos, replyQueue_conversacion, replyQueue_chatBase } = await connectRabbitMQ();
 
 
         // Escuchar mensajes en la cola de RabbitMQ y procesarlos con el servicio correspondiente 
