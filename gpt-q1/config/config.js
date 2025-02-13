@@ -50,4 +50,5 @@ class Configuracion {
     }
 }
 const config = new Configuracion();
+
 export default config;
