@@ -32,4 +32,4 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,OPENAI_API_KEY=$OPENAI_API_KEY,HOST_API_ERRORS=$HOST_API_ERRORS
+            --set-env-vars AMQP_URL=${{ secrets.AMQP_URL }},PUERTO=${{ secrets.PUERTO }},OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},HOST_API_ERRORS=${{ secrets.HOST_API_ERRORS }}
