@@ -35,7 +35,7 @@ class Configuracion {
         // Amqp connection
         this.amqpUrl = process.env.AMQP_URL,
         this.exchange = "GPT",
-        this.queue = "Q1-GPT",
+        this.queue = "Q1-GPT1",
         this.routingKey = "gpt.q1"
         this.max_cant_queue = 10,
 
