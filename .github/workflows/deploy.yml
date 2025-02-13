@@ -24,7 +24,7 @@ jobs:
           HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
-          gcloud run deploy r-conversacion \
+          gcloud run deploy gpt-q1 \
             --source ./gpt-q1 \
             --platform managed \
             --region us-east1 \
