@@ -20,7 +20,7 @@ jobs:
       - name: Deploy to Cloud Run
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
-          PORT: ${{ secrets.PORT }}
+          PUERTO: ${{ secrets.PUERTO }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           gcloud run deploy gpt-q1 \
@@ -31,4 +31,4 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=512Mi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PORT=$PORT,OPENAI_API_KEY=$OPENAI_API_KEY
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,OPENAI_API_KEY=$OPENAI_API_KEY
