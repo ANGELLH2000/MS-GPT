@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-gpt-q1:
-    name: Deploy gpt-q1-819669
+    name: Deploy gpt-q1-819688
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,15 +21,15 @@ jobs:
         env:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
-          gcloud run deploy gpt-q1 \
+          gcloud run deploy r-conversacion \
             --source ./gpt-q1 \
             --platform managed \
             --region us-east1 \
             --allow-unauthenticated \
             --min-instances=1 \
             --cpu=1 \
-            --memory=512Mi \
-            --set-env-vars AMQP_URL=${{ secrets.AMQP_URL }},PUERTO=${{ secrets.PUERTO }},OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }},HOST_API_ERRORS=${{ secrets.HOST_API_ERRORS }}
+            --memory=1Gi \
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
