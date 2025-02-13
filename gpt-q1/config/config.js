@@ -40,7 +40,7 @@ class Configuracion {
         this.max_cant_queue = 10,
 
         // Server connection
-        this.port = process.env.PUERTO || 8080,
+        this.port = process.env.PORT || 8080,
 
         // Microservice name
         this.nameMicroservice = packageJson.name
