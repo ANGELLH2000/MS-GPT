@@ -116,7 +116,7 @@ async function main() {
 
 
                     if (res) {
-                        const confirmation = { success: true, message: "Texto trabajado correctamente con GPT y guardado en la base de datos" };
+                        const confirmation = { success: true, message: "Texto trabajado correctamente con GPT y guardado en la base de datos" , res};
                         channel.sendToQueue(message.properties.replyTo,
                             Buffer.from(JSON.stringify(confirmation)),
                             { correlationId: message.properties.correlationId }
