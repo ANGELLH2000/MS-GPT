@@ -22,6 +22,7 @@ jobs:
           AMQP_URL: ${{ secrets.AMQP_URL }}
           PUERTO: ${{ secrets.PUERTO }}
           HOST_API_ERRORS: ${{ secrets.HOST_API_ERRORS }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           gcloud run deploy gpt-q1 \
@@ -32,4 +33,4 @@ jobs:
             --min-instances=1 \
             --cpu=1 \
             --memory=1Gi \
-            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS
+            --set-env-vars AMQP_URL=$AMQP_URL,PUERTO=$PUERTO,MONGO_URI=$MONGO_URI,HOST_API_ERRORS=$HOST_API_ERRORS,OPENAI_API_KEY=$OPENAI_API_KEY
