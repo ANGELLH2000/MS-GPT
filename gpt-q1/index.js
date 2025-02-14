@@ -101,6 +101,7 @@ async function main() {
                         ambientacion: res.message.ambientacion,
                         contexto_emocional: res.message.contexto_emocional,
                         hojas: res.message.cantidad_hojas,
+                        gpt:"completed"
                     }
                     const payloadChatBase = { libreria: data_queue.libreria, id_chat: data_queue.id_chat, base };
                     const configProducer_ChatBase = { payload: payloadChatBase, channel, replyQueue: replyQueue_chatBase, exchange: "DB-CRUD", routingKey: "update.base" };
